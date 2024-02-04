@@ -23,7 +23,7 @@ jobs:
               uses: bahmutov/npm-install@v1
 
             - name: Build library
-              run: cd packages/form-renderer npm run build
+              run: --cwd packages/form-renderer npm run build
 
             - name: Build demo site
               run: cd sites/form-builder npm run build
