@@ -1,0 +1,30 @@
+{
+    "name": "form-builder",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.3",
+        "@emotion/styled": "^11.11.0",
+        "@mui/icons-material": "^5.15.7",
+        "@mui/material": "^5.15.7",
+        "form-renderer": "*",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "styled-components": "6.1.8"
+    },
+    "devDependencies": {
+        "@reduxjs/toolkit": "^2.1.0",
+        "@types/react": "18.2.52",
+        "@types/react-dom": "18.2.18",
+        "@types/uuid": "^9.0.8",
+        "@vitejs/plugin-react": "4.2.1",
+        "react-redux": "^9.1.0",
+        "typescript": "5.3.3",
+        "uuid": "^9.0.1",
+        "vite": "5.0.12"
+    }
+}
