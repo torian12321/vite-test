@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import type { Field } from 'my-lib2';
+import type { Field } from 'form-renderer';
 import type { FieldsState } from '../slices/fieldsSlice';
 import type { RootState } from '../';
 import { useAppSelector } from '../actions';
