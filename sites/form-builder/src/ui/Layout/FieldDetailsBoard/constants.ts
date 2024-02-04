@@ -1,5 +1,5 @@
-import { FIELD_TYPE } from '../../../../../../packages/fb/src/components/FormRenderer';
-import type { Field } from '../../../../../../packages/fb/src/components/FormRenderer';
+import { FIELD_TYPE } from '../../../../../../packages/form-renderer/src/components/FormRenderer';
+import type { Field } from '../../../../../../packages/form-renderer/src/components/FormRenderer';
 
 const capitalizeFirstLetter = (st: string): string => st.charAt(0).toUpperCase() + st.slice(1);
 
@@ -12,7 +12,7 @@ export const FORM_FIELDS: Field[] = [
             required: true,
         },
         properties: {
-            choices: Object.values(FIELD_TYPE).map((fieldType) => ({
+            choices: Object.values(FIELD_TYPE).map((fieldType: FIELD_TYPE) => ({
                 value: fieldType,
                 label: capitalizeFirstLetter(fieldType.replaceAll('_', ' ')),
             })),
