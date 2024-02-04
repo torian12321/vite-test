@@ -39,13 +39,13 @@
     "files": [
         "dist"
     ],
-    "main": "./dist/my-lib.umd.js",
-    "module": "./dist/my-lib.es.js",
+    "main": "./dist/form-renderer.umd.js",
+    "module": "./dist/form-renderer.es.js",
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/my-lib.es.js",
-            "require": "./dist/my-lib.umd.js"
+            "import": "./dist/form-renderer.es.js",
+            "require": "./dist/form-renderer.umd.js"
         }
     }
 }
