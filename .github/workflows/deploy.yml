@@ -22,13 +22,10 @@ jobs:
             - name: Install dependencies
               uses: bahmutov/npm-install@v1
 
-            - name: Build project
-              run: npm run build
-
             - name: Build library
               run: cd packages/form-renderer npm run build
 
-            - name: Build demo
+            - name: Build demo site
               run: cd sites/form-builder npm run build
 
             - name: Upload production-ready build files
