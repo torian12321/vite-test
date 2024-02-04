@@ -1,5 +1,3 @@
-[Original ref](https://github.com/nicolaserny/react-library-vite-example)
-
 # Create a React Library with TypeScript and Vite
 
 This repository is an example of a React library created with TypeScript and Vite.
@@ -31,3 +29,7 @@ If you want to start the storybook server, run:
 ```bash
 cd packages/form-builder && yarn storybook
 ```
+
+## Bibliography
+
+[Original ref](https://github.com/nicolaserny/react-library-vite-example)
