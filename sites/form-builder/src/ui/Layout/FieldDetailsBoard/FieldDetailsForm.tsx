@@ -1,7 +1,5 @@
 import { FormRenderer, FIELD_TYPE } from 'form-renderer';
-// TODO: add OnChangeArgs to main exports
-import type { OnChangeArgs } from 'form-renderer/src/components/FormRenderer';
-import type { Field } from 'form-renderer';
+import type { Field, OnChangeArgs } from 'form-renderer';
 
 import { useAppSelector } from '../../../store/actions';
 import { getSelectedField } from '../../../store/selectors/settings.selectors';
