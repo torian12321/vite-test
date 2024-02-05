@@ -44,7 +44,7 @@
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/form-renderer.es.js",
+            "import": "./src/index.ts",
             "require": "./dist/form-renderer.umd.js"
         }
     }

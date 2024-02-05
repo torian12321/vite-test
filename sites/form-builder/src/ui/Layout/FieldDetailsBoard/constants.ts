@@ -1,5 +1,5 @@
-import { FIELD_TYPE } from '../../../../../../packages/form-renderer/src/components/FormRenderer';
-import type { Field } from '../../../../../../packages/form-renderer/src/components/FormRenderer';
+import { FIELD_TYPE } from 'form-renderer';
+import type { Field } from 'form-renderer';
 
 const capitalizeFirstLetter = (st: string): string => st.charAt(0).toUpperCase() + st.slice(1);
 

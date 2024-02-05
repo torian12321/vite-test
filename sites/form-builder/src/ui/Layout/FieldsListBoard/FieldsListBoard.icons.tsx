@@ -10,7 +10,7 @@ import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
 import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import { FIELD_TYPE } from '../../../../../../packages/form-renderer/src/components/FormRenderer';
+import { FIELD_TYPE } from 'form-renderer';
 
 export const ICONS: { [fieldType: string]: JSX.Element } = {
     [FIELD_TYPE.TEXT]: <AbcIcon />,
