@@ -1,7 +1,7 @@
 import { FormRenderer, FIELD_TYPE } from 'form-renderer';
 // TODO: add OnChangeArgs to main exports
-import type { OnChangeArgs } from '../../../../../../packages/form-renderer/src/components/FormRenderer';
-import type { Field } from '../../../../../../packages/form-renderer/src/components/FormRenderer';
+import type { OnChangeArgs } from 'form-renderer/src/components/FormRenderer';
+import type { Field } from 'form-renderer';
 
 import { useAppSelector } from '../../../store/actions';
 import { getSelectedField } from '../../../store/selectors/settings.selectors';
@@ -17,7 +17,7 @@ export const FieldDetailsForm = () => {
     const handleOnChange = ({ values }: OnChangeArgs) => {
         const hasChanges = Object.keys(values).find(
             // @ts-ignore
-            (k) => values[k] !== fieldDetails[k]
+            (k) => values[k] !== fieldDetails[k],
         );
 
         if (hasChanges) {
