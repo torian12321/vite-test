@@ -2,9 +2,9 @@
     "name": "form-builder",
     "version": "0.0.0",
     "scripts": {
+        "start": "vite",
         "dev": "vite",
-        "build": "tsc && vite build",
-        "preview": "vite preview"
+        "build": "tsc && vite build"
     },
     "dependencies": {
         "@emotion/react": "^11.11.3",
