@@ -23,7 +23,6 @@ jobs:
               uses: bahmutov/npm-install@v1
 
             - name: Build library + Demo
-              working-directory: ./packages/form-renderer
               run: npm run build
 
             # - name: Build library
