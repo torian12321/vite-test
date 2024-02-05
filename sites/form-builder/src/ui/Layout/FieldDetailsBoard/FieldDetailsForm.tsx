@@ -1,6 +1,5 @@
 import { FormRenderer, FIELD_TYPE } from 'form-renderer';
 import type { Field, OnChangeArgs } from 'form-renderer';
-
 import { useAppSelector } from '../../../store/actions';
 import { getSelectedField } from '../../../store/selectors/settings.selectors';
 import { useGetFieldById } from '../../../store/selectors/fields.selectors';
@@ -33,6 +32,8 @@ export const FieldDetailsForm = () => {
                 name: fieldDetails?.name || '',
                 label: fieldDetails?.label || '',
                 type: fieldDetails?.type || FIELD_TYPE.TEXT,
+                placeholder: fieldDetails?.placeholder || '',
+                disabled: fieldDetails?.disabled || false,
             }}
         />
     ) : null;
