@@ -22,13 +22,17 @@ jobs:
             - name: Install dependencies
               uses: bahmutov/npm-install@v1
 
-            - name: Build library
+            - name: Build library + Demo
               working-directory: ./packages/form-renderer
               run: npm run build
 
-            - name: Build demo site
-              working-directory: ./sites/form-builder
-              run: npm run build
+            # - name: Build library
+            #   working-directory: ./packages/form-renderer
+            #   run: npm run build
+
+            # - name: Build demo site
+            #   working-directory: ./sites/form-builder
+            #   run: npm run build
 
             - name: Upload production-ready build files
               uses: actions/upload-artifact@v2
