@@ -1,1 +1,1 @@
-export { FieldDetailsBoard } from "./FieldDetailsBoard";
+export { FieldDetailsBoard } from './FieldDetailsBoard'
