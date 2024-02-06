@@ -1,6 +1,6 @@
-import { FIELD_TYPE } from '../../FormRenderer.constants';
-import type { FieldProps } from './Fields.types';
-import { SharedTextField } from './SharedTextField';
+import { FIELD_TYPE } from '../../FormRenderer.constants'
+import type { FieldProps } from './Fields.types'
+import { SharedTextField } from './SharedTextField'
 
 export const TextField = ({
   type,
@@ -13,7 +13,7 @@ export const TextField = ({
   onBlur,
   error,
 }: FieldProps): JSX.Element | null => {
-  if (type !== FIELD_TYPE.TEXT) return null;
+  if (type !== FIELD_TYPE.TEXT) return null
 
   return (
     <SharedTextField
@@ -26,5 +26,5 @@ export const TextField = ({
       onChange={onChange}
       onBlur={onBlur}
     />
-  );
-};
+  )
+}

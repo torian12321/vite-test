@@ -1,8 +1,8 @@
-import MuiExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MuiAccordion from '@mui/material/Accordion';
-import MuiAccordionDetails from '@mui/material/AccordionDetails';
-import MuiCircularProgress from '@mui/material/CircularProgress';
-import { FIELD_TYPE } from '../../FormRenderer.constants';
+import MuiExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import MuiAccordion from '@mui/material/Accordion'
+import MuiAccordionDetails from '@mui/material/AccordionDetails'
+import MuiCircularProgress from '@mui/material/CircularProgress'
+import { FIELD_TYPE } from '../../FormRenderer.constants'
 import {
   InfoListHeader,
   InfoListHeaderTitle,
@@ -10,9 +10,9 @@ import {
   InfoListItemLabel,
   InfoListItemValue,
   loaderStyles,
-} from './Fields.styles';
-import type { FieldProps } from './Fields.types';
-import { getFieldChoices } from './Fields.utils';
+} from './Fields.styles'
+import type { FieldProps } from './Fields.types'
+import { getFieldChoices } from './Fields.utils'
 
 export const InfoList = ({
   type,
@@ -22,9 +22,9 @@ export const InfoList = ({
   disabled = false,
   properties = {},
 }: FieldProps): JSX.Element | null => {
-  if (type !== FIELD_TYPE.INFO_LIST) return null;
+  if (type !== FIELD_TYPE.INFO_LIST) return null
 
-  const choices = getFieldChoices(properties);
+  const choices = getFieldChoices(properties)
 
   return (
     <MuiAccordion>
@@ -46,5 +46,5 @@ export const InfoList = ({
         ))}
       </MuiAccordionDetails>
     </MuiAccordion>
-  );
-};
+  )
+}

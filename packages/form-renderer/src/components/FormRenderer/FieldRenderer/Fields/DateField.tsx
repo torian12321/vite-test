@@ -1,12 +1,12 @@
-import type { TextFieldProps } from "@mui/material/TextField";
-import type { PickersActionBarAction } from "@mui/x-date-pickers";
-import { AdapterMoment as MuiAdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
-import { DesktopDatePicker as MuiDesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-import { LocalizationProvider as MuiLocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import moment, { Moment } from "moment";
-import { FIELD_TYPE } from "../../FormRenderer.constants";
-import type { FieldProps } from "./Fields.types";
-import { formatMomentToDate, getSlotPropsTextField } from "./Fields.utils";
+import type { TextFieldProps } from '@mui/material/TextField'
+import type { PickersActionBarAction } from '@mui/x-date-pickers'
+import { AdapterMoment as MuiAdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
+import { DesktopDatePicker as MuiDesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker'
+import { LocalizationProvider as MuiLocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import moment, { Moment } from 'moment'
+import { FIELD_TYPE } from '../../FormRenderer.constants'
+import type { FieldProps } from './Fields.types'
+import { formatMomentToDate, getSlotPropsTextField } from './Fields.utils'
 
 export const DateField = ({
   type,
@@ -19,29 +19,29 @@ export const DateField = ({
   onChange,
   onBlur,
 }: FieldProps): JSX.Element | null => {
-  if (type !== FIELD_TYPE.DATE) return null;
+  if (type !== FIELD_TYPE.DATE) return null
 
-  const fieldValue = value ? moment(value) : null;
+  const fieldValue = value ? moment(value) : null
   const actionBarButtons: PickersActionBarAction[] = required
-    ? ["today"]
-    : ["clear", "today"];
+    ? ['today']
+    : ['clear', 'today']
 
   const handleOnChange = (newValue: Moment | null) => {
     if (!newValue) {
-      onChange(null);
+      onChange(null)
     } else {
-      const stringDate = formatMomentToDate(newValue);
-      onChange(stringDate);
+      const stringDate = formatMomentToDate(newValue)
+      onChange(stringDate)
     }
-  };
+  }
 
   return (
     <MuiLocalizationProvider
       dateAdapter={MuiAdapterMoment}
-      adapterLocale="en-US"
+      adapterLocale='en-US'
     >
       <MuiDesktopDatePicker
-        format="MM/DD/YYYY"
+        format='MM/DD/YYYY'
         label={label}
         value={fieldValue}
         disabled={disabled}
@@ -61,5 +61,5 @@ export const DateField = ({
         }}
       />
     </MuiLocalizationProvider>
-  );
-};
+  )
+}

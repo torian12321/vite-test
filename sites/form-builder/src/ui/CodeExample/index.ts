@@ -1,1 +1,1 @@
-export { CodeExample } from './CodeExample';
+export { CodeExample } from './CodeExample'

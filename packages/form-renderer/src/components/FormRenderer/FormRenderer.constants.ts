@@ -1,4 +1,4 @@
-import type { FieldValue } from './FormRenderer.types';
+import type { FieldValue } from './FormRenderer.types'
 
 export enum FIELD_TYPE {
   TEXT = 'text',
@@ -22,19 +22,19 @@ export const FIELDS_WITHOUT_INNER_LABEL: FIELD_TYPE[] = [
   FIELD_TYPE.BOOLEAN,
   FIELD_TYPE.FILE_UPLOAD,
   FIELD_TYPE.RADIO_BUTTON,
-];
+]
 
 export const FIELDS_WITH_OPTIONS: FIELD_TYPE[] = [
   FIELD_TYPE.DROPDOWN,
   FIELD_TYPE.RADIO_BUTTON,
   FIELD_TYPE.OPTIONS_LIST,
   FIELD_TYPE.INFO_LIST,
-];
+]
 
 export const INFO_FIELDS: FIELD_TYPE[] = [
   FIELD_TYPE.INFO_MESSAGE,
   FIELD_TYPE.INFO_LIST,
-];
+]
 
 export enum LOGIC_TYPES {
   EQUAL = 'equal',
@@ -77,4 +77,4 @@ export const emptyFieldValues: Record<FIELD_TYPE, FieldValue> = {
   // Info fields
   [FIELD_TYPE.INFO_MESSAGE]: undefined,
   [FIELD_TYPE.INFO_LIST]: undefined,
-};
+}

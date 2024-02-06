@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { useFormContext } from '../FormContext';
-import { FIELD_TYPE, emptyFieldValues } from '../FormRenderer.constants';
-import { isFieldWithOptions } from './FieldRenderer.utils';
-import { useGetChoices } from './useGetChoices';
+import { useEffect } from 'react'
+import { useFormContext } from '../FormContext'
+import { FIELD_TYPE, emptyFieldValues } from '../FormRenderer.constants'
+import { isFieldWithOptions } from './FieldRenderer.utils'
+import { useGetChoices } from './useGetChoices'
 
 /**
  *
@@ -13,26 +13,28 @@ import { useGetChoices } from './useGetChoices';
  */
 
 export const useValidateOptionSelected = (fieldName: string): void => {
-  const { choices = [], isLoading = false } = useGetChoices(fieldName);
-  const { getFieldProps } = useFormContext();
-  const { type, value, setValue } = getFieldProps(fieldName);
+  const { choices = [], isLoading = false } = useGetChoices(fieldName)
+  const { getFieldProps } = useFormContext()
+  const { type, value, setValue } = getFieldProps(fieldName)
 
   useEffect(() => {
     if (!isLoading && Boolean(value) && isFieldWithOptions(type)) {
       if (!Array.isArray(value)) {
-        const option = choices.find(choice => choice.value === value);
+        const option = choices.find((choice) => choice.value === value)
 
         if (!option) {
           // If the previously selected option is not in the new list, reset.
-          setValue(emptyFieldValues[type as FIELD_TYPE]);
+          setValue(emptyFieldValues[type as FIELD_TYPE])
         }
       } else {
         // Multiple select case
         // Get only values that exist on the new choices list
-        const options = choices.filter(choice => value.includes(choice?.value));
-        setValue(options);
+        const options = choices.filter((choice) =>
+          value.includes(choice?.value),
+        )
+        setValue(options)
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoading, choices]);
-};
+  }, [isLoading, choices])
+}

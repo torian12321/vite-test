@@ -1,4 +1,4 @@
-import { FileInput } from './FileInput';
+import { FileInput } from './FileInput'
 
-export default FileInput;
-export { FileInput };
+export default FileInput
+export { FileInput }

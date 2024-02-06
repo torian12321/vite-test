@@ -1,6 +1,6 @@
-import { FIELD_TYPE } from '../../FormRenderer.constants';
-import type { FieldProps } from './Fields.types';
-import { SharedTextField } from './SharedTextField';
+import { FIELD_TYPE } from '../../FormRenderer.constants'
+import type { FieldProps } from './Fields.types'
+import { SharedTextField } from './SharedTextField'
 
 export const NumericField = ({
   type,
@@ -13,17 +13,17 @@ export const NumericField = ({
   onBlur,
   error,
 }: FieldProps): JSX.Element | null => {
-  if (type !== FIELD_TYPE.NUMBER) return null;
+  if (type !== FIELD_TYPE.NUMBER) return null
 
   const handleOnChange = (val: string) => {
-    const number = parseFloat(val);
+    const number = parseFloat(val)
 
     if (onChange && !isNaN(number)) {
-      onChange(number);
+      onChange(number)
     } else if (!val) {
-      onChange(undefined);
+      onChange(undefined)
     }
-  };
+  }
 
   return (
     <SharedTextField
@@ -38,5 +38,5 @@ export const NumericField = ({
       onChange={handleOnChange}
       onBlur={onBlur}
     />
-  );
-};
+  )
+}

@@ -1,4 +1,4 @@
-import { styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles'
 
 export const Wrapper = styled('main')({
   position: 'relative',
@@ -7,4 +7,4 @@ export const Wrapper = styled('main')({
   flexDirection: 'column',
   flexGrow: 1,
   overflowX: 'auto',
-});
+})

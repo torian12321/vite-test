@@ -1,11 +1,11 @@
-import type { ChangeEvent } from "react";
-import MuiTextField from "@mui/material/TextField";
-import type { TextFieldProps } from "@mui/material/TextField";
+import type { ChangeEvent } from 'react'
+import MuiTextField from '@mui/material/TextField'
+import type { TextFieldProps } from '@mui/material/TextField'
 
-export interface SharedTextFieldProps extends Omit<TextFieldProps, "onChange"> {
-  rows?: number;
-  loading?: boolean;
-  onChange?: (value: string) => void;
+export interface SharedTextFieldProps extends Omit<TextFieldProps, 'onChange'> {
+  rows?: number
+  loading?: boolean
+  onChange?: (value: string) => void
 }
 
 /**
@@ -22,13 +22,13 @@ export interface SharedTextFieldProps extends Omit<TextFieldProps, "onChange"> {
  */
 
 export const commonTextFieldProps: TextFieldProps = {
-  size: "small",
-  variant: "outlined",
-  type: "text",
+  size: 'small',
+  variant: 'outlined',
+  type: 'text',
   fullWidth: true,
   rows: 1,
   multiline: false,
-};
+}
 
 export const SharedTextField = ({
   name,
@@ -39,12 +39,12 @@ export const SharedTextField = ({
   ...rest
 }: SharedTextFieldProps): JSX.Element => {
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const val = event.target.value;
+    const val = event.target.value
 
     if (onChange) {
-      onChange(val);
+      onChange(val)
     }
-  };
+  }
 
   return (
     <MuiTextField
@@ -56,5 +56,5 @@ export const SharedTextField = ({
       multiline={Boolean(rows > 1)}
       onChange={handleOnChange}
     />
-  );
-};
+  )
+}

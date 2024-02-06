@@ -1,20 +1,20 @@
-import type { Theme } from '@mui/material/styles';
-import type { SxProps } from '@mui/system';
+import type { Theme } from '@mui/material/styles'
+import type { SxProps } from '@mui/system'
 
 export interface FieldWrapperProps {
-  name: string;
-  label: string;
-  sx?: SxProps<Theme>;
-  showLabel?: boolean;
-  required?: boolean;
-  inlineDisplay?: boolean;
-  messages?: Message[];
+  name: string
+  label: string
+  sx?: SxProps<Theme>
+  showLabel?: boolean
+  required?: boolean
+  inlineDisplay?: boolean
+  messages?: Message[]
 }
 
 export interface LabelProps {
-  name: string;
-  label: string;
-  required?: boolean;
+  name: string
+  label: string
+  required?: boolean
 }
 
 export enum MESSAGE_SEVERITY {
@@ -26,10 +26,10 @@ export enum MESSAGE_SEVERITY {
 }
 
 export type Message = {
-  message: string;
-  severity?: MESSAGE_SEVERITY;
-};
+  message: string
+  severity?: MESSAGE_SEVERITY
+}
 
 export interface HelperTextProps {
-  messages?: Message[];
+  messages?: Message[]
 }

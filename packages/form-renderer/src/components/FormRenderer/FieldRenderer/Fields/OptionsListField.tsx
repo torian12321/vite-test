@@ -1,19 +1,19 @@
-import { ChangeEvent } from 'react';
-import MuiCheckbox from '@mui/material/Checkbox';
-import MuiFormControlLabel from '@mui/material/FormControlLabel';
-import { FIELD_TYPE } from '../../FormRenderer.constants';
-import type { FieldProps, Choice, ChoiceValue } from './Fields.types';
-import { getFieldChoices } from './Fields.utils';
+import { ChangeEvent } from 'react'
+import MuiCheckbox from '@mui/material/Checkbox'
+import MuiFormControlLabel from '@mui/material/FormControlLabel'
+import { FIELD_TYPE } from '../../FormRenderer.constants'
+import type { FieldProps, Choice, ChoiceValue } from './Fields.types'
+import { getFieldChoices } from './Fields.utils'
 
 const getOptionName = (choice: Choice): string => {
   if (choice.value) {
-    return choice?.value.toString();
+    return choice?.value.toString()
   }
   if (choice.label) {
-    return choice?.label.toString();
+    return choice?.label.toString()
   }
-  return '';
-};
+  return ''
+}
 
 export const OptionsListField = ({
   type,
@@ -24,25 +24,25 @@ export const OptionsListField = ({
   onBlur,
   ...rest
 }: FieldProps) => {
-  if (type !== FIELD_TYPE.OPTIONS_LIST) return null;
-  if (!Array.isArray(value)) return null;
+  if (type !== FIELD_TYPE.OPTIONS_LIST) return null
+  if (!Array.isArray(value)) return null
 
-  const choices = getFieldChoices(rest?.properties);
+  const choices = getFieldChoices(rest?.properties)
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const cbValue = event.target.value;
+    const cbValue = event.target.value
 
     if (value.includes(cbValue)) {
-      onChange(value.filter(v => v !== cbValue));
+      onChange(value.filter((v) => v !== cbValue))
     } else {
-      onChange([...value, cbValue]);
+      onChange([...value, cbValue])
     }
-  };
+  }
 
   return (
     <div>
       {choices.map((option, index: number) => {
-        const choiceName = getOptionName(option);
+        const choiceName = getOptionName(option)
 
         return (
           <MuiFormControlLabel
@@ -64,8 +64,8 @@ export const OptionsListField = ({
             disabled={option.disabled || disabled}
             onBlur={onBlur}
           />
-        );
+        )
       })}
     </div>
-  );
-};
+  )
+}

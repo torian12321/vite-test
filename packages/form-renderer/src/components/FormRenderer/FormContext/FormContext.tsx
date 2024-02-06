@@ -1,8 +1,5 @@
-import { createContext, useContext } from 'react';
-import type {
-  FormContextProps,
-  GetFieldPropsValues,
-} from './FormContext.types';
+import { createContext, useContext } from 'react'
+import type { FormContextProps, GetFieldPropsValues } from './FormContext.types'
 
 const iniValues: FormContextProps = {
   disabled: false,
@@ -13,17 +10,17 @@ const iniValues: FormContextProps = {
   choicesCollection: {},
   getFieldProps: (_fieldName: string) => ({}) as GetFieldPropsValues,
   onSubmit: () => undefined,
-};
+}
 
-export const FormContext = createContext<FormContextProps>(iniValues);
+export const FormContext = createContext<FormContextProps>(iniValues)
 
 export const useFormContext = (): FormContextProps => {
-  const context = useContext(FormContext);
+  const context = useContext(FormContext)
 
   if (!context) {
     throw new Error(
       'Form compound components cannot be rendered outside the Form component',
-    );
+    )
   }
-  return context;
-};
+  return context
+}

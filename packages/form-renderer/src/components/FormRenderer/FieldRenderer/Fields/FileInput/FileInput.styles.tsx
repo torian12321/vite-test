@@ -1,6 +1,6 @@
-import MuiTypography from '@mui/material/Typography';
-import { styled, Theme } from '@mui/material/styles';
-import { SxProps } from '@mui/system';
+import MuiTypography from '@mui/material/Typography'
+import { styled, Theme } from '@mui/material/styles'
+import { SxProps } from '@mui/system'
 
 export const fileInputStyles: SxProps<Theme> = {
   width: '100%',
@@ -28,7 +28,7 @@ export const fileInputStyles: SxProps<Theme> = {
     width: 'calc(100% - 2rem)',
     color: 'error.main',
   },
-};
+}
 
 export const filesToUploadStyles: SxProps<Theme> = {
   display: 'flex',
@@ -46,15 +46,15 @@ export const filesToUploadStyles: SxProps<Theme> = {
       color: 'action.disabled',
     },
   },
-};
+}
 
 interface PlaceholderBoxProps {
-  error?: boolean;
+  error?: boolean
 }
 export const PlaceholderBox = styled(MuiTypography, {
-  shouldForwardProp: prop => !['error'].includes(prop as string),
+  shouldForwardProp: (prop) => !['error'].includes(prop as string),
 })<PlaceholderBoxProps>(({ theme, error = false }) => ({
   width: 'calc(100% - 40px)',
   textAlign: 'left',
   color: error ? theme.palette.error.main : 'initial',
-}));
+}))

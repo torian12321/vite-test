@@ -1,4 +1,4 @@
-import { useForm } from './useForm';
+import { useForm } from './useForm'
 
-export default useForm;
-export { useForm };
+export default useForm
+export { useForm }

@@ -1,10 +1,10 @@
-import { HelperTextWrapper, HelperMessage } from './FieldWrapper.styles';
-import type { HelperTextProps } from './FieldWrapper.types';
+import { HelperTextWrapper, HelperMessage } from './FieldWrapper.styles'
+import type { HelperTextProps } from './FieldWrapper.types'
 
 export const HelperText = ({
   messages = [],
 }: HelperTextProps): JSX.Element | null => {
-  const hasMessages = Boolean(messages.length > 0);
+  const hasMessages = Boolean(messages.length > 0)
 
   return (
     <HelperTextWrapper isOpen={hasMessages} aria-hidden={!hasMessages}>
@@ -14,5 +14,5 @@ export const HelperText = ({
         </HelperMessage>
       ))}
     </HelperTextWrapper>
-  );
-};
+  )
+}

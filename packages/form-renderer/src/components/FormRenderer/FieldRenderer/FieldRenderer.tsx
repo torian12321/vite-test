@@ -1,10 +1,10 @@
-import { useMemo } from 'react';
-import { useFormContext } from '../FormContext';
-import { FIELD_TYPE } from '../FormRenderer.constants';
-import type { FieldRendererProps, muiStyles } from './FieldRenderer.types';
-import { isInfoField, isFieldWithLabel } from './FieldRenderer.utils';
-import { FieldWrapper } from './FieldWrapper';
-import type { FieldProps } from './Fields';
+import { useMemo } from 'react'
+import { useFormContext } from '../FormContext'
+import { FIELD_TYPE } from '../FormRenderer.constants'
+import type { FieldRendererProps, muiStyles } from './FieldRenderer.types'
+import { isInfoField, isFieldWithLabel } from './FieldRenderer.utils'
+import { FieldWrapper } from './FieldWrapper'
+import type { FieldProps } from './Fields'
 import {
   BooleanField,
   DateField,
@@ -18,9 +18,9 @@ import {
   RadioGroup,
   InfoMessage,
   InfoList,
-} from './Fields';
-import { useGetChoices } from './useGetChoices';
-import { useValidateOptionSelected } from './useValidateOptionSelected';
+} from './Fields'
+import { useGetChoices } from './useGetChoices'
+import { useValidateOptionSelected } from './useValidateOptionSelected'
 
 export const FieldRenderer = ({
   name,
@@ -28,9 +28,9 @@ export const FieldRenderer = ({
   sxFieldsByType = {},
   sxFieldsByName = {},
 }: FieldRendererProps): JSX.Element | null => {
-  useValidateOptionSelected(name);
-  const { choices = [], isLoading = false } = useGetChoices(name);
-  const { getFieldProps, innerLabel, inlineDisplay } = useFormContext();
+  useValidateOptionSelected(name)
+  const { choices = [], isLoading = false } = useGetChoices(name)
+  const { getFieldProps, innerLabel, inlineDisplay } = useFormContext()
   const {
     type,
     value,
@@ -43,17 +43,17 @@ export const FieldRenderer = ({
     validations = {},
     onBlur,
     setValue,
-  } = getFieldProps(name);
-  const isRequired = Boolean(validations.required);
+  } = getFieldProps(name)
+  const isRequired = Boolean(validations.required)
 
   const showInlineLabel = useMemo(
     () =>
       isInfoField(type) ||
       (!inlineDisplay && innerLabel && !isFieldWithLabel(type)),
     [inlineDisplay, innerLabel, type],
-  );
+  )
 
-  if (!visible) return null;
+  if (!visible) return null
 
   const commonFieldprops: FieldProps = {
     type,
@@ -70,43 +70,43 @@ export const FieldRenderer = ({
     properties: {
       choices,
     },
-  };
+  }
 
   const renderField = () => {
     switch (type) {
       case FIELD_TYPE.FILE_UPLOAD:
-        return <FileInput {...commonFieldprops} />;
+        return <FileInput {...commonFieldprops} />
       case FIELD_TYPE.BOOLEAN:
-        return <BooleanField {...commonFieldprops} />;
+        return <BooleanField {...commonFieldprops} />
       case FIELD_TYPE.DATE:
-        return <DateField {...commonFieldprops} />;
+        return <DateField {...commonFieldprops} />
       case FIELD_TYPE.DATE_TIME:
-        return <DateTimeField {...commonFieldprops} />;
+        return <DateTimeField {...commonFieldprops} />
       case FIELD_TYPE.NUMBER:
-        return <NumericField {...commonFieldprops} />;
+        return <NumericField {...commonFieldprops} />
       case FIELD_TYPE.RADIO_BUTTON:
-        return <RadioGroup {...commonFieldprops} />;
+        return <RadioGroup {...commonFieldprops} />
       case FIELD_TYPE.LONG_TEXT:
-        return <LongTextField {...commonFieldprops} />;
+        return <LongTextField {...commonFieldprops} />
       case FIELD_TYPE.DROPDOWN:
-        return <DropdownField {...commonFieldprops} />;
+        return <DropdownField {...commonFieldprops} />
       case FIELD_TYPE.OPTIONS_LIST:
-        return <OptionsListField {...commonFieldprops} />;
+        return <OptionsListField {...commonFieldprops} />
       case FIELD_TYPE.INFO_MESSAGE:
-        return <InfoMessage {...commonFieldprops} />;
+        return <InfoMessage {...commonFieldprops} />
       case FIELD_TYPE.INFO_LIST:
-        return <InfoList {...commonFieldprops} />;
+        return <InfoList {...commonFieldprops} />
       case FIELD_TYPE.TEXT:
       default:
-        return <TextField {...commonFieldprops} />;
+        return <TextField {...commonFieldprops} />
     }
-  };
+  }
 
   const combinedStyles = {
     ...sxFields,
     ...(sxFieldsByName[name] || {}),
     ...(sxFieldsByType[type] || {}),
-  } as muiStyles;
+  } as muiStyles
 
   return (
     <FieldWrapper
@@ -120,5 +120,5 @@ export const FieldRenderer = ({
     >
       {renderField()}
     </FieldWrapper>
-  );
-};
+  )
+}

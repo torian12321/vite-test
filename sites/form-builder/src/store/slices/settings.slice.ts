@@ -7,9 +7,9 @@ export enum MODES {
 }
 
 export type SettingsState = {
-  selectedField: string,
-  mode: MODES,
-};
+  selectedField: string
+  mode: MODES
+}
 
 const initialState: SettingsState = {
   selectedField: '',
@@ -38,6 +38,11 @@ export const settingsSlice = createSlice({
   },
 })
 
-export const { setSelectedField, unsetSelectedField, setVisualMode, setCodeMode } = settingsSlice.actions
+export const {
+  setSelectedField,
+  unsetSelectedField,
+  setVisualMode,
+  setCodeMode,
+} = settingsSlice.actions
 
-export default settingsSlice.reducer;
+export default settingsSlice.reducer

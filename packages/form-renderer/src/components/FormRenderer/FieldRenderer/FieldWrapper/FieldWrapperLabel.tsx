@@ -1,5 +1,5 @@
-import { Label, LabelAsterisk } from './FieldWrapper.styles';
-import type { LabelProps } from './FieldWrapper.types';
+import { Label, LabelAsterisk } from './FieldWrapper.styles'
+import type { LabelProps } from './FieldWrapper.types'
 
 export const FieldLabel = ({
   label = '',
@@ -10,4 +10,4 @@ export const FieldLabel = ({
     {label}
     {required && <LabelAsterisk />}
   </Label>
-);
+)

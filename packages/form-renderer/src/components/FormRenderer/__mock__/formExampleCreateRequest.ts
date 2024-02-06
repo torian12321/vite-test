@@ -2,9 +2,9 @@ import {
   FIELD_TYPE,
   LOGIC_TYPES,
   LOGIC_ACTIONS,
-} from '../FormRenderer.constants';
-import type { FormData } from './mockFormUtils';
-import { mockOptions } from './mockFormUtils';
+} from '../FormRenderer.constants'
+import type { FormData } from './mockFormUtils'
+import { mockOptions } from './mockFormUtils'
 
 export const formExampleCreateRequest: FormData = {
   fields: [
@@ -176,4 +176,4 @@ export const formExampleCreateRequest: FormData = {
       ],
     },
   ],
-};
+}

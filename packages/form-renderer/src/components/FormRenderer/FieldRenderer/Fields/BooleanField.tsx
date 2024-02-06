@@ -1,7 +1,7 @@
-import type { ChangeEvent } from 'react';
-import MuiCheckbox from '@mui/material/Checkbox';
-import { FIELD_TYPE } from '../../FormRenderer.constants';
-import type { FieldProps } from './Fields.types';
+import type { ChangeEvent } from 'react'
+import MuiCheckbox from '@mui/material/Checkbox'
+import { FIELD_TYPE } from '../../FormRenderer.constants'
+import type { FieldProps } from './Fields.types'
 
 export const BooleanField = ({
   type,
@@ -11,13 +11,13 @@ export const BooleanField = ({
   onBlur,
   onChange,
 }: FieldProps): JSX.Element | null => {
-  if (type !== FIELD_TYPE.BOOLEAN) return null;
+  if (type !== FIELD_TYPE.BOOLEAN) return null
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const newValue = event.target.checked || false;
+    const newValue = event.target.checked || false
 
-    onChange(newValue);
-  };
+    onChange(newValue)
+  }
 
   return (
     <MuiCheckbox
@@ -29,5 +29,5 @@ export const BooleanField = ({
       onChange={handleOnChange}
       onBlur={onBlur}
     />
-  );
-};
+  )
+}

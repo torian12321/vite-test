@@ -1,6 +1,6 @@
-import { FIELD_TYPE } from '../FormRenderer.constants';
-import { mockOptions } from './mockFormUtils';
-import type { FormData } from './mockFormUtils';
+import { FIELD_TYPE } from '../FormRenderer.constants'
+import { mockOptions } from './mockFormUtils'
+import type { FormData } from './mockFormUtils'
 
 export const formExampleWorkflow: FormData = {
   fields: [
@@ -23,4 +23,4 @@ export const formExampleWorkflow: FormData = {
       placeholder: 'Drop a file or click to upload',
     },
   ],
-};
+}

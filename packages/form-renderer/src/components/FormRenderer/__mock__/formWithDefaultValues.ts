@@ -1,6 +1,6 @@
-import { FIELD_TYPE } from '../FormRenderer.constants';
-import { mockOptions } from './mockFormUtils';
-import type { FormData } from './mockFormUtils';
+import { FIELD_TYPE } from '../FormRenderer.constants'
+import { mockOptions } from './mockFormUtils'
+import type { FormData } from './mockFormUtils'
 
 export const formWithDefaultValues: FormData = {
   fields: [
@@ -32,4 +32,4 @@ export const formWithDefaultValues: FormData = {
       },
     },
   ],
-};
+}

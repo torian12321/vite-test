@@ -1,29 +1,29 @@
-import type { TextFieldProps } from '@mui/material/TextField';
-import type { FieldSlotsComponents } from '@mui/x-date-pickers/internals';
-import moment, { Moment } from 'moment';
-import { DATE_FORMAT, DATETIME_FORMAT } from '../../../utils/dateUtils';
-import type { Properties, Choice } from './Fields.types';
-import { commonTextFieldProps } from './SharedTextField';
+import type { TextFieldProps } from '@mui/material/TextField'
+import type { FieldSlotsComponents } from '@mui/x-date-pickers/internals'
+import moment, { Moment } from 'moment'
+import { DATE_FORMAT, DATETIME_FORMAT } from '../../../utils/dateUtils'
+import type { Properties, Choice } from './Fields.types'
+import { commonTextFieldProps } from './SharedTextField'
 
 type SlotProps = TextFieldProps & {
-  slotProps: FieldSlotsComponents;
-};
+  slotProps: FieldSlotsComponents
+}
 
 export const getFieldChoices = (properties?: Properties): Choice[] => {
-  const { choices = [] } = properties || {};
+  const { choices = [] } = properties || {}
 
-  return choices;
-};
+  return choices
+}
 
 export const formatMomentToDateTime = (dateMoment: Moment): string =>
-  moment(dateMoment).format(DATETIME_FORMAT);
+  moment(dateMoment).format(DATETIME_FORMAT)
 
 export const formatMomentToDate = (dateMoment: Moment): string =>
-  moment(dateMoment).format(DATE_FORMAT);
+  moment(dateMoment).format(DATE_FORMAT)
 
-export const getTodayDate = (): string => formatMomentToDate(moment());
+export const getTodayDate = (): string => formatMomentToDate(moment())
 
-export const getTodayDateTime = (): string => formatMomentToDate(moment());
+export const getTodayDateTime = (): string => formatMomentToDate(moment())
 
 /**
  * Funtionallity for `DatePicker` and `DateTimePicker` only to be used in TextField slot
@@ -35,10 +35,10 @@ export const getSlotPropsTextField = (
   params: TextFieldProps,
 ): TextFieldProps => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { slotProps, ...restParams } = params as SlotProps;
+  const { slotProps, ...restParams } = params as SlotProps
 
   return {
     ...commonTextFieldProps,
     ...restParams,
-  };
-};
+  }
+}

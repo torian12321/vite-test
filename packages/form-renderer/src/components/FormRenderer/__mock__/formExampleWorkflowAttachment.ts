@@ -1,5 +1,5 @@
-import { FIELD_TYPE } from '../FormRenderer.constants';
-import type { FormData } from './mockFormUtils';
+import { FIELD_TYPE } from '../FormRenderer.constants'
+import type { FormData } from './mockFormUtils'
 
 export const formExampleWorkflowAttachment: FormData = {
   fields: [
@@ -17,4 +17,4 @@ export const formExampleWorkflowAttachment: FormData = {
       },
     },
   ],
-};
+}

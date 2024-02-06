@@ -2,8 +2,8 @@ import {
   FIELD_TYPE,
   LOGIC_TYPES,
   LOGIC_ACTIONS,
-} from '../FormRenderer.constants';
-import type { FormData } from './mockFormUtils';
+} from '../FormRenderer.constants'
+import type { FormData } from './mockFormUtils'
 
 export const formWithLogic: FormData = {
   fields: [
@@ -53,4 +53,4 @@ export const formWithLogic: FormData = {
       ],
     },
   ],
-};
+}

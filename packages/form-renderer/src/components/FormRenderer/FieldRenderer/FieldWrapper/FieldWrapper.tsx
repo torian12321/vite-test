@@ -1,9 +1,9 @@
-import type { PropsWithChildren } from 'react';
-import MuiBox from '@mui/material/Box';
-import { Wrapper, FieldContainer, FieldBox } from './FieldWrapper.styles';
-import { FieldWrapperProps } from './FieldWrapper.types';
-import { HelperText } from './FieldWrapperHelperText';
-import { FieldLabel } from './FieldWrapperLabel';
+import type { PropsWithChildren } from 'react'
+import MuiBox from '@mui/material/Box'
+import { Wrapper, FieldContainer, FieldBox } from './FieldWrapper.styles'
+import { FieldWrapperProps } from './FieldWrapper.types'
+import { HelperText } from './FieldWrapperHelperText'
+import { FieldLabel } from './FieldWrapperLabel'
 
 export const FieldWrapper = ({
   children,
@@ -15,7 +15,7 @@ export const FieldWrapper = ({
   inlineDisplay = false,
   showLabel = true,
 }: PropsWithChildren<FieldWrapperProps>): JSX.Element => {
-  const hasLabel = label && showLabel;
+  const hasLabel = label && showLabel
 
   return (
     <Wrapper sx={sx}>
@@ -29,7 +29,7 @@ export const FieldWrapper = ({
         </FieldBox>
       </FieldContainer>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default FieldWrapper;
+export default FieldWrapper
