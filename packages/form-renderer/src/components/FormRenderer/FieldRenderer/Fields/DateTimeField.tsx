@@ -1,13 +1,13 @@
 import type { TextFieldProps } from '@mui/material/TextField'
 import type { PickersActionBarAction } from '@mui/x-date-pickers'
-import { AdapterMoment as MuiAdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DesktopDateTimePicker as MuiDateTimePicker } from '@mui/x-date-pickers/DesktopDateTimePicker'
 import { LocalizationProvider as MuiLocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers'
-import moment, { Moment } from 'moment'
+import dayjs, { Dayjs } from 'dayjs'
 import { FIELD_TYPE } from '../../FormRenderer.constants'
 import type { FieldProps } from './Fields.types'
-import { formatMomentToDateTime, getSlotPropsTextField } from './Fields.utils'
+import { formatDayjsToDateTime, getSlotPropsTextField } from './Fields.utils'
 
 export const DateTimeField = ({
   type,
@@ -22,25 +22,22 @@ export const DateTimeField = ({
 }: FieldProps): JSX.Element | null => {
   if (type !== FIELD_TYPE.DATE_TIME) return null
 
-  const fieldValue = value ? moment(value) : null
+  const fieldValue = value ? dayjs(value) : null
   const actionBarButtons: PickersActionBarAction[] = required
     ? ['today']
     : ['clear', 'today']
 
-  const handleOnChange = (newValue: Moment | null) => {
+  const handleOnChange = (newValue: Dayjs | null) => {
     if (!newValue) {
       onChange(null)
     } else {
-      const stringDate = formatMomentToDateTime(newValue)
+      const stringDate = formatDayjsToDateTime(newValue)
       onChange(stringDate)
     }
   }
 
   return (
-    <MuiLocalizationProvider
-      dateAdapter={MuiAdapterMoment}
-      adapterLocale='en-US'
-    >
+    <MuiLocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='en-US'>
       <MuiDateTimePicker
         ampm
         ampmInClock

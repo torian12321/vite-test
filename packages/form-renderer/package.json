@@ -16,7 +16,7 @@
     "@mui/styles": "^5.15.7",
     "@mui/system": "^5.15.7",
     "@mui/x-date-pickers": "^6.19.3",
-    "moment": "^2.30.1",
+    "dayjs": "^1.11.10",
     "prettier": "^3.2.5",
     "react": "16.8.0 || 17.x",
     "react-dom": "16.8.0 || 17.x"
