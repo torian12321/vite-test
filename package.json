@@ -6,8 +6,8 @@
     "sites/*"
   ],
   "scripts": {
-    "build": "lerna run build --stream",
     "start": "lerna run start --stream",
+    "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "prettier": "lerna run prettier --stream",
     "prettier:check": "lerna run prettier:check --stream"
