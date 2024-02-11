@@ -1,60 +1,61 @@
 name: Deploy
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
-    build:
-        name: Build
-        runs-on: ubuntu-latest
+  build:
+    name: Build
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout repo
-              uses: actions/checkout@v2
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
 
-            - name: Setup Node
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 20
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
 
-            - name: Install dependencies
-              # uses: bahmutov/npm-install@v1
-              run: npm install
+      - name: Install dependencies
+        # uses: bahmutov/npm-install@v1
+        run: npm install
 
-            - name: Build library + Demo
-              run: npm run build
+      - name: Build library + Demo
+        run: npm run build
 
-            # - name: Build library
-            #   working-directory: ./packages/form-renderer
-            #   run: npm run build
+      # - name: Build library
+      #   working-directory: ./packages/form-renderer
+      #   run: npm run build
 
-            # - name: Build demo site
-            #   working-directory: ./sites/form-builder
-            #   run: npm run build
+      # - name: Build demo site
+      #   working-directory: ./sites/form-builder
+      #   run: npm run build
 
-            - name: Upload production-ready build files
-              uses: actions/upload-artifact@v2
-              with:
-                  name: production-files
-                  path: ./sites/form-builder/dist
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
+          # path: ./sites/form-builder/dist
 
-    deploy:
-        name: Deploy
-        needs: build
-        runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/main'
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
-        steps:
-            - name: Download artifact
-              uses: actions/download-artifact@v2
-              with:
-                  name: production-files
-                  path: ./dist
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
 
-            - name: Deploy to GitHub Pages
-              uses: peaceiris/actions-gh-pages@v3
-              with:
-                  github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./dist
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
