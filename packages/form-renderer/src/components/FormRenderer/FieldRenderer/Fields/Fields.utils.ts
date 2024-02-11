@@ -1,9 +1,12 @@
 import type { TextFieldProps } from '@mui/material/TextField'
 import type { FieldSlotsComponents } from '@mui/x-date-pickers/internals'
-import moment, { Moment } from 'moment'
-import { DATE_FORMAT, DATETIME_FORMAT } from '../../../utils/dateUtils'
 import type { Properties, Choice } from './Fields.types'
 import { commonTextFieldProps } from './SharedTextField'
+import dayjs, { Dayjs } from 'dayjs'
+
+export const US_DATE_FORMAT = 'MM/DD/YYYY'
+export const DATETIME_FORMAT = 'YYYY-MM-DDTHH:mm:ss'
+export const DATE_FORMAT = 'YYYY-MM-DD'
 
 type SlotProps = TextFieldProps & {
   slotProps: FieldSlotsComponents
@@ -15,15 +18,15 @@ export const getFieldChoices = (properties?: Properties): Choice[] => {
   return choices
 }
 
-export const formatMomentToDateTime = (dateMoment: Moment): string =>
-  moment(dateMoment).format(DATETIME_FORMAT)
+export const formatDayjsToDateTime = (date: Dayjs): string =>
+  dayjs(date).format(DATETIME_FORMAT)
 
-export const formatMomentToDate = (dateMoment: Moment): string =>
-  moment(dateMoment).format(DATE_FORMAT)
+export const formatDayjsToDate = (date: Dayjs): string =>
+  dayjs(date).format(DATE_FORMAT)
 
-export const getTodayDate = (): string => formatMomentToDate(moment())
+export const getTodayDate = (): string => formatDayjsToDate(dayjs())
 
-export const getTodayDateTime = (): string => formatMomentToDate(moment())
+export const getTodayDateTime = (): string => formatDayjsToDate(dayjs())
 
 /**
  * Funtionallity for `DatePicker` and `DateTimePicker` only to be used in TextField slot
